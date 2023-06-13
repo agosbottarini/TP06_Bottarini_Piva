@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace TP6. Elecciones 2023.Controllers;
+namespace TP06_Bottarini_Piva.Controllers;
 
 public class HomeController : Controller
 {

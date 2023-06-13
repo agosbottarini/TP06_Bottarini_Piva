@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "TP6. Elecciones 2023": {
+    "TP06_Bottarini_Piva": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

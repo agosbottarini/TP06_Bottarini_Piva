@@ -1,4 +1,4 @@
-namespace TP6. Elecciones 2023.Models;
+namespace TP06_Bottarini_Piva.Models;
 
 public class ErrorViewModel
 {
