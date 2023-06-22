@@ -1,4 +1,4 @@
-using System.Data.SqlClient;
+/*using System.Data.SqlClient;
 using Dapper;
 public static class BD
 {
@@ -60,3 +60,4 @@ public static class BD
         return ListaCandidato;
     }
 }
+*/
