@@ -17,7 +17,7 @@ public static class BD
         string sql = "DELETE FROM Candidato WHERE IdCandidato = @pidCandidato";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new {pidCandidato = idCandidato});
+            db.Execute(sql, new {pdCandidato = idCandidato});
         }
     }
     public static Partido VerInfoPartido(int idPartido)
