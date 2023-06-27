@@ -9,31 +9,50 @@ public class HomeController : Controller
         ViewBag.Partidos = BD.ListarPartidos();
         return View();
     }
-        public IActionResult Elecciones23()
+    public IActionResult Elecciones23()
+
     {
         return View();
     }
-        public IActionResult Creditos()
+
+    public IActionResult Creditos()
     {
         return View();
     }
-        public IActionResult AgregarPartido()
+
+    public IActionResult AgregarPartido()
     {
         return View();
     }
-        public IActionResult AgregarCandidato()
+
+    public IActionResult AgregarCandidato(int idPartido)
     {
+        ViewBag.IdPartido = idPartido;
         return View();
     }
-        public IActionResult VerDetallePartido(int IdPartido)
+
+    public IActionResult VerDetallePartido(int IdPartido)
     {
         ViewBag.Partido = BD.VerInfoPartido(IdPartido);
         ViewBag.Candidatos = BD.ListarCandidatos(IdPartido);
         return View();
     }
-         public IActionResult VerDetalleCandidato()
+
+    public IActionResult VerDetalleCandidato(int idCandidato)
     {
+        ViewBag.Candidatos = BD.VerInfoCandidato(idCandidato);
         return View();
+    }
+
+    [HttpPost] public IActionResult GuardarCandidato(Candidato can)
+    {
+        BD.AgregarCandidatos(can);
+        return RedirectToAction("VerDetallePartido", new {idPartido = can.IdCandidato});
+    }
+    public IActionResult EliminarCandidato(int idCandidato, int idPartido)
+    {
+        BD.EliminarCandidato(idCandidato);
+        return RedirectToAction("VerDetallePartido", new {idPartido = idPartido});
     }
 
 }
