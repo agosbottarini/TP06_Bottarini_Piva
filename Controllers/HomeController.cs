@@ -6,6 +6,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
+        ViewBag.Partidos = BD.ListarPartidos();
         return View();
     }
         public IActionResult Elecciones23()
@@ -24,8 +25,10 @@ public class HomeController : Controller
     {
         return View();
     }
-        public IActionResult VerDetallePartido()
+        public IActionResult VerDetallePartido(int IdPartido)
     {
+        ViewBag.Partido = BD.VerInfoPartido(IdPartido);
+        ViewBag.Candidatos = BD.ListarCandidatos(IdPartido);
         return View();
     }
          public IActionResult VerDetalleCandidato()

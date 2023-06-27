@@ -2,8 +2,8 @@ using System.Data.SqlClient;
 using Dapper;
 public static class BD
 {
-    public static string _connectionString = @"Sever=localhost;
-    DataBase=NombreBase;Trusted_Connection=True;";
+    public static string _connectionString = @"Server=A-PHZ2-CIDI-047;
+    DataBase=TP_Elecciones;Trusted_Connection=True;";
     public static void AgregarCandidatos(Candidato can)
     {
         string sql = "INSERT INTO Candidato(IdPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion) VALUES (@IdPartido, @Apellido, @Nombre, @FechaNacimiento, @Foto, @Postulacion)";
@@ -25,7 +25,7 @@ public static class BD
         Partido infoPartido = null;
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT IdPartido FROM Partido WHERE IdPartido = @pidPartido";
+            string sql = "SELECT * FROM Partido WHERE IdPartido = @pidPartido";
             infoPartido = db.QueryFirstOrDefault<Partido>(sql, new {pidPartido = idPartido});
         }
         return infoPartido;
@@ -35,7 +35,7 @@ public static class BD
         Candidato infoCandidato = null;
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT IdCandidato FROM Candidato WHERE IdCandidato = @pidCandidato";
+            string sql = "SELECT * FROM Candidato WHERE IdCandidato = @pidCandidato";
             infoCandidato = db.QueryFirstOrDefault<Candidato>(sql, new {pidCandidato = idCandidato});
         }
         return infoCandidato;
@@ -56,7 +56,7 @@ public static class BD
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Candidato WHERE IdPartido = @pidPartido";
-            ListaCandidato = db.Query<Candidato>(sql, new{ pidPartio = idPartido}).ToList();
+            ListaCandidato = db.Query<Candidato>(sql, new{ pidPartido = idPartido}).ToList();
         }
         return ListaCandidato;
     }
