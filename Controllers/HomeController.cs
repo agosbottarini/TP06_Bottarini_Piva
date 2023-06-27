@@ -8,4 +8,30 @@ public class HomeController : Controller
     {
         return View();
     }
+        public IActionResult Elecciones23()
+    {
+        return View();
+    }
+        public IActionResult Creditos()
+    {
+        return View();
+    }
+        public IActionResult AgregarPartido()
+    {
+        return View();
+    }
+        public IActionResult AgregarCandidato()
+    {
+        return View();
+    }
+        public IActionResult VerDetallePartido()
+    {
+        return View();
+    }
+         public IActionResult VerDetalleCandidato()
+    {
+        return View();
+    }
+
 }
+
