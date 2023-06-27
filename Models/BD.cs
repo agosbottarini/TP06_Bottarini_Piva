@@ -1,8 +1,9 @@
-/*using System.Data.SqlClient;
+using System.Data.SqlClient;
 using Dapper;
 public static class BD
 {
-    public static string _connectionString 
+    public static string _connectionString = @"Sever=localhost;
+    DataBase=NombreBase;Trusted_Connection=True;";
     public static void AgregarCandidatos(Candidato can)
     {
         string sql = "INSERT INTO Candidato(IdPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion) VALUES (@IdPartido, @Apellido, @Nombre, @FechaNacimiento, @Foto, @Postulacion)";
@@ -16,7 +17,7 @@ public static class BD
         string sql = "DELETE FROM Candidato WHERE IdCandidato = @pidCandidato";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new {IdCandidato = idCandidato});
+            db.Execute(sql, new {pidCandidato = idCandidato});
         }
     }
     public static Partido VerInfoPartido(int idPartido)
@@ -60,4 +61,3 @@ public static class BD
         return ListaCandidato;
     }
 }
-*/
