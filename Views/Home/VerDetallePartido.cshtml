@@ -1,3 +1,31 @@
-<br><br><br><br><br><br><br><br>
+<br><br><br>
 
-Partido @ViewBag.Partido.Nombre 
+<a><img src="/img/partidos/@ViewBag.Partido.Logo" alt="..." width="500px" class="rounded mx-auto d-block"></a>
+<br><br><br>
+<p class="elecciones">
+    
+    <strong>Fundacion: </strong> @ViewBag.Partido.FechaFundacion <br><br>
+    <strong>Cantidad de Diputados: </strong> @ViewBag.Partido.CantidadDiputados <br><br>
+    <strong>Cantidad de Senadores: </strong> @ViewBag.Partido.CantidadSenadores <br><br>
+    <a href="@ViewBag.Partido.SitioWeb" target="_blank">Sitio Web</a>
+</p>
+
+<h1 class="candidatos" >Candidatos:</h1>
+
+<div class="row">
+    @foreach (Candidato item in ViewBag.Candidatos)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <a><img src="/img/partidos/@item.Foto" alt="..." class="rounded mx-auto d-block"></a>
+                    <br><br>
+                    <p class="rounded mx-auto d-block"> @item.Nombre </p>
+                    <br>
+                    <a href='@Url.Action("VerDetallePartido", "Home", new {idPartido = item.IdPartido})' class="btn btn-primary rounded mx-auto d-block">Ver más</a>
+                </div>
+            </div>
+        </div>
+    
+    }
+</div>

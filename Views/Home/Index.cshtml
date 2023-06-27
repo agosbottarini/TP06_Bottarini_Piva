@@ -10,9 +10,9 @@
                 <div class="card-body">
                     <a><img src="/img/partidos/@item.Logo" alt="..." class="rounded mx-auto d-block"></a>
                     <br><br>
-                    <h5 class="rounded mx-auto d-block"> @item.Nombre </h5>
+                    <h5 class="text-uppercase rounded mx-auto d-block"> @item.Nombre </h5>
                     <br>
-                    <a href='@Url.Action("VerDetallePartido", "Home", new {idPartido = item.IdPartido})' class="btn btn-primary rounded mx-auto d-block" target="_blank">Ver más</a>
+                    <a href='@Url.Action("VerDetallePartido", "Home", new {idPartido = item.IdPartido})' class="btn btn-primary rounded mx-auto d-block">Ver más</a>
                 </div>
             </div>
         </div>
