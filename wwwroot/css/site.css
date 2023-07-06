@@ -35,3 +35,9 @@ footer {
   width: 40%;
   margin-bottom: 80px;
 }
+
+.partidos{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,29 @@
+<div class="row g-3" style="padding: 90px; margin-top: 0.5%">
+    <form action='@Url.Action("GuardarCandidato")' method="post">
+        <div class="col-md-6">
+            <input type="hidden" name="IdPartido" value="@ViewBag.idPartido">
+            <label class="form-label">Nombre:</label>
+            <input type="text" class="form-control" name="Nombre">
+        </div><br>
+        <div class="col-md-6">
+            <label class="form-label">Apellido:</label>
+            <input type="text" class="form-control" name="Apellido">
+        </div><br>
+        <div class="col-12">
+            <label class="form-label">Fecha de nacimiento</label>
+            <input type="text" class="form-control" name="FechaNacimiento" placeholder="28/03/1996">
+        </div><br>
+        <div class="col-12">
+            <label class="form-label">Direccion de la foto del candidato</label>
+            <input type="file"  class="form-control" name="Foto">
+        </div><br>
+        <div class="col-md-6">
+            <label class="form-label">Postulacion:</label>
+            <input type="text" class="form-control" name="Postulacion">
+        </div><br><br>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+</div>
