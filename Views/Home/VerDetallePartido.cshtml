@@ -8,9 +8,9 @@
     <strong>Cantidad de Diputados: </strong> @ViewBag.Partido.CantidadDiputados <br><br>
     <strong>Cantidad de Senadores: </strong> @ViewBag.Partido.CantidadSenadores <br><br>
     <a href="@ViewBag.Partido.SitioWeb" target="_blank">Sitio Web</a>
-    <br><br>
-    <h1 class="candidatos" >Candidatos:</h1>
     <br>
+    <h1 class="candidatos" >Candidatos:</h1>
+    
     <div class="col-12">
         <a class="btn btn-primary" href='@Url.Action("AgregarCandidato", new{idPartido = ViewBag.Partido.IdPartido})' style="margin-left: 3.5%" >Agregar candidato</a>
     </div>
@@ -21,11 +21,13 @@
         @foreach (Candidato item in @ViewBag.Candidatos)
         {
         <div class="card" style="width:20rem;margin:20p6x 0 24px 0; padding:20px;">
-            <img class="card-img-top" src="/img/@item.Foto" alt="image" style="width:100%;height:137px;">
+            <img class="card-img-top" src="@item.Foto" alt="image" style="width:100%;height:137px;">
             <div class="card-body">
                 <h4 class="titulocard" >@item.Nombre @item.Apellido</h4>
-                <a href = '@Url.Action("VerDetalleCandidato","Home",new {IdCandidato = item.IdCandidato})' class="btn btn-primary" style="display:flex; justify-content:center;">Detalle Candidato</a>
+                <a href = '@Url.Action("VerDetalleCandidato","Home",new {idCandidato = item.IdCandidato})' class="btn btn-primary" style="display:flex; justify-content:center;">Detalle Candidato</a>
+                <a class="btn btn-danger" style="text-align: center; margin-top: 5px;" href='@Url.Action("EliminarCandidato", new{idPartido = item.IdPartido, idCandidato = item.IdCandidato})'>Eliminar</a>
             </div>
         </div>
         }
 </div>
+

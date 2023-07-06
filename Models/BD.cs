@@ -3,7 +3,7 @@ using Dapper;
 
 public static class BD
 {
-    public static string _connectionString = @"Server=A-PHZ2-AMI-002;
+    public static string _connectionString = @"Server=localhost;
     DataBase=TP_Elecciones;Trusted_Connection=True;";
     public static void AgregarCandidatos(Candidato can)
     {
@@ -18,7 +18,7 @@ public static class BD
         string sql = "DELETE FROM Candidato WHERE IdCandidato = @pidCandidato";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new {pdCandidato = idCandidato});
+            db.Execute(sql, new {pidCandidato = idCandidato});
         }
     }
     public static Partido VerInfoPartido(int idPartido)

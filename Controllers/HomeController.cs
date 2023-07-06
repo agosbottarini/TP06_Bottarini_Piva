@@ -20,11 +20,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult AgregarPartido()
-    {
-        return View();
-    }
-
     public IActionResult AgregarCandidato(int idPartido)
     {
         ViewBag.IdPartido = idPartido;
@@ -38,16 +33,16 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult VerDetalleCandidato(int idCandidato)
+    public IActionResult VerDetalleCandidato(int IdCandidato)
     {
-        ViewBag.Candidatos = BD.VerInfoCandidato(idCandidato);
+        ViewBag.Candidato = BD.VerInfoCandidato(IdCandidato);
         return View();
     }
 
     [HttpPost] public IActionResult GuardarCandidato(Candidato can)
     {
         BD.AgregarCandidatos(can);
-        return RedirectToAction("VerDetallePartido", new {idPartido = can.IdCandidato});
+        return RedirectToAction("VerDetallePartido", new {idPartido = can.IdPartido});
     }
     public IActionResult EliminarCandidato(int idCandidato, int idPartido)
     {

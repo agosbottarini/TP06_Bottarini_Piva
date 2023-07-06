@@ -30,10 +30,11 @@ footer {
 
 .candidatos
 {
+  margin-top: 10px;
   margin-left: 70px;
   font-size: 170%;
   width: 40%;
-  margin-bottom: 80px;
+  margin-bottom: 10px;
 }
 
 .partidos{
