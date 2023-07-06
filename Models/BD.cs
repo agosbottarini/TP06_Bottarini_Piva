@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using Dapper;
 public static class BD
 {
-    public static string _connectionString = @"Server=A-PHZ2-CIDI-047;
+    public static string _connectionString = @"Server=localhost;
     DataBase=TP_Elecciones;Trusted_Connection=True;";
     public static void AgregarCandidatos(Candidato can)
     {
